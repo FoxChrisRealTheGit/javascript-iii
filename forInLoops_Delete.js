@@ -33,6 +33,11 @@
 
 function showValues( obj ) {
   // CODE HERE
+  var str ='';
+  for(var x in obj){
+    str+= obj[x];
+  }
+  return str;
 }
 
 
@@ -43,7 +48,14 @@ function showValues( obj ) {
 
 // CODE HERE
 
-
+var greaterThan10 = obj =>{
+  for(var x in obj){
+    if(obj[x]>10){
+      obj[x] = 0;
+    }
+  }
+  return obj;
+}
 
 // ========================
 
@@ -51,7 +63,12 @@ function showValues( obj ) {
 // Write a function called double that takes in an object. Write a for in loop that loops over the object and changes every value to be itself multipled by 2. Return the updated object.
 
 // CODE HERE
-
+var double = obj =>{
+  for (var x in obj){
+    obj[x] = obj[x] * 2;
+  }
+  return obj;
+}
 
 
 // ========================
@@ -60,7 +77,15 @@ function showValues( obj ) {
 // Write a function called secrets that will take in an object. Create an empty string variable. Write a for in loop that loops over the object. If the property name starts with an 'sh', concatenate the value to the string variable. By the end of the for in loop, you should have a sentence, return that sentence.
 
 // CODE HERE
-
+var secrets = obj =>{
+  var str = '';
+  for(var x in obj){
+    if(x.startsWith('sh')){
+      str += obj[x];
+    }
+  }
+  return str;
+}
 
 // ========================
 
@@ -85,7 +110,14 @@ function showValues( obj ) {
 // Write a function called removePassword that takes in an object. Delete the property password and return the object.
 
 // CODE HERE
-
+var removePassword = obj =>{
+  for(var x in obj){
+  if(obj[x] === obj.password){
+  delete obj[x];
+  }
+  }
+  return obj;
+}
 
 
 // ========================
@@ -101,7 +133,11 @@ var deleteTheBigNumbers = {
 }
 
 // CODE HERE
-
+for(var x in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[x]>100){
+    delete deleteTheBigNumbers[x];
+  }
+}
 
 // ========================
 
@@ -109,7 +145,14 @@ var deleteTheBigNumbers = {
 // Write a function called startsWithK that takes an object as a parameter. Write a for in loop to loop over the object. If any property name starts with k, delete that property. Return the updated object.
 
 // CODE HERE
-
+var startsWithK = obj =>{
+  for(var x in obj){
+    if(x.startsWith('k')){
+      delete obj[x];
+    }
+  }
+  return obj;
+}
 
 
 // ========================
@@ -119,3 +162,11 @@ var deleteTheBigNumbers = {
 // (hint: the method includes() may be of use...)
 
 // CODE HERE
+var hiddenTreasure = obj =>{
+  for(var x in obj){
+    if(obj[x].includes('treasure') === false){
+      delete obj[x];
+    }
+  }
+  return obj;
+}

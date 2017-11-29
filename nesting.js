@@ -37,6 +37,16 @@ var employees = [{
 //  3. Return the updated employee array.
 
 // Code here
+var employeeUpdater = () =>{
+  employee.foreach((x, i, arr)=>{
+    if(arr[i][x] === 'Theo'){
+      delete arr[i];
+    }else if (arr[i][x] === 'Lorie'){
+      arr[i].department = 'HR';  
+    }
+  });
+  return employee;
+}
 
 
 
