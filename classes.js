@@ -179,7 +179,7 @@ class Machine{
     }
 
     reboot(){
-       return this.rebootComplete();
+       return() => this.rebootComplete();
     }
 
     rebootComplete(){

@@ -83,6 +83,8 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 let bobsTotal = purchases.reduce((p, x, i, arr) =>{
     if(arr[i].owner === "Bob"){
-      p + arr[i].price;
+      return p + arr[i].price
+    }else{
+        return p;
     }
-  }); // Your code here
+  }, 0); // Your code here

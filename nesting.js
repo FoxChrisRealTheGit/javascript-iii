@@ -38,14 +38,14 @@ var employees = [{
 
 // Code here
 var employeeUpdater = () =>{
-  employee.foreach((x, i, arr)=>{
-    if(arr[i][x] === 'Theo'){
-      delete arr[i];
-    }else if (arr[i][x] === 'Lorie'){
+  employees.forEach((x, i, arr)=>{
+    if(arr[i].firstName === 'Theo'){
+      employees.splice(i, 1);
+    }else if (arr[i].firstName === 'Lorie'){
       arr[i].department = 'HR';  
     }
   });
-  return employee;
+  return employees;
 }
 
 
